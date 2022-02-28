@@ -1,22 +1,21 @@
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 93847) {
-        radio.sendNumber(98765)
-        Ampel = 1
         pins.digitalWritePin(DigitalPin.P2, 0)
         pins.digitalWritePin(DigitalPin.P1, 0)
         basic.pause(1000)
         pins.digitalWritePin(DigitalPin.P2, 1)
         pins.digitalWritePin(DigitalPin.P1, 1)
         pins.digitalWritePin(DigitalPin.P0, 0)
+        radio.sendNumber(98765)
     } else {
         if (receivedNumber == 66453) {
-            radio.sendNumber(46123)
             Ampel = 2
             pins.digitalWritePin(DigitalPin.P0, 1)
             pins.digitalWritePin(DigitalPin.P1, 0)
             basic.pause(1000)
             pins.digitalWritePin(DigitalPin.P1, 1)
             pins.digitalWritePin(DigitalPin.P2, 0)
+            radio.sendNumber(46123)
         }
     }
 })
