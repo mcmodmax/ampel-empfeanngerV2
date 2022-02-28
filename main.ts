@@ -3,19 +3,20 @@ radio.onReceivedNumber(function (receivedNumber) {
         pins.digitalWritePin(DigitalPin.P2, 0)
         pins.digitalWritePin(DigitalPin.P1, 0)
         basic.pause(1000)
+        radio.sendNumber(98765)
         pins.digitalWritePin(DigitalPin.P2, 1)
         pins.digitalWritePin(DigitalPin.P1, 1)
         pins.digitalWritePin(DigitalPin.P0, 0)
-        radio.sendNumber(98765)
     } else {
         if (receivedNumber == 66453) {
             Ampel = 2
+            radio.sendNumber(46123)
             pins.digitalWritePin(DigitalPin.P0, 1)
             pins.digitalWritePin(DigitalPin.P1, 0)
             basic.pause(1000)
+            radio.sendNumber(46123)
             pins.digitalWritePin(DigitalPin.P1, 1)
             pins.digitalWritePin(DigitalPin.P2, 0)
-            radio.sendNumber(46123)
         }
     }
 })
